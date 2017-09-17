@@ -1,6 +1,7 @@
 ---
 title: "Statistical Hypothesis Testing"
 categories: "Statistics"
+mathjax: true
 ---
 
 # Statistical Hypothesis Testing
