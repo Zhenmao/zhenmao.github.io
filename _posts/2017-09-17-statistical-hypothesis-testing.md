@@ -40,17 +40,17 @@ What are we trying to prove?
 | The null hypothesis ($$H_0$$)                                                       | The alternative hypothesis ($$H_1$$)                                                    |
 |-----------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
 | The hypothesis that we try to provide evidence against.                           | The hypothesis that we try to prove to be true.                                       |
-| \$$H_0$$ usually states that the population parameter is equal to the claimed value. | \$$H_1$$ usually states that the population parameter is not equal to the claimed value. |
-| \$$H_0$$ usually states there is no observed effect.                                 | \$$H_1$$ usually states there is an observed effect.                                     | 
+| \$$ H_0 $$ usually states that the population parameter is equal to the claimed value. | \$$ H_1 $$ usually states that the population parameter is not equal to the claimed value. |
+| \$$ H_0 $$ usually states there is no observed effect.                                 | \$$ H_1 $$ usually states there is an observed effect.                                     | 
 
 Tip: The sign of alternative hypothesis: $$\neq$$: two-tailed, $$<, \le, >, \ge$$: one-tailed.
 
 ### Step 3: Select significance level $$\alpha$$
 How tolerant are we about falsely rejecting the null hypothesis?
 
-\$$\alpha$$: Type I error rate. A type I error is when you reject the null hypothesis when it is true.
+\$$ \alpha $$: Type I error rate. A type I error is when you reject the null hypothesis when it is true.
 
-\$$\beta$$: Type II error rate. A type II error is when you fail to reject the null hypothesis when it is false.
+\$$ \beta $$: Type II error rate. A type II error is when you fail to reject the null hypothesis when it is false.
 
 |          |   No Fire  |    Fire    |
 |----------|:----------:|:----------:|
@@ -72,7 +72,7 @@ $$\text{Test statistic}=\frac{\text{Statistic}-\text{Parameter}}{\text{Standard 
 |-----------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Population mean ($$\mu$$)                                                     | (Normal population or $$n > 30$$) **and** $$\sigma$$ known.                                                                 | One-sample z-test                              | $$z=\frac{\bar{x}-\mu}{\sigma/\sqrt{n}}$$                                                                                                                                                                                |
 | Population mean ($$\mu$$)                                                     | (Normal population or $$n > 30$$) **and** $$\sigma$$ unknown                                                                | One-sample t-test                              | $$t=\frac{\bar{x}-\mu}{\sigma/\sqrt{n}}$$ $$df=n-1$$                                                                                                                                                                      |
-| Population proportion ($p$)                                                 | $$np >10$$ **and** $$n(1−p) >10$$ **and** it is a Simple Random Sample.                                                 | One-proportion z-test                          | $$z=\frac{\hat{p}-p}{\sqrt{p(1-p)}}$$                                                                                                                                                                                |
+| Population proportion ($$p$$)                                                 | $$np >10$$ **and** $$n(1−p) >10$$ **and** it is a Simple Random Sample.                                                 | One-proportion z-test                          | $$z=\frac{\hat{p}-p}{\sqrt{p(1-p)}}$$                                                                                                                                                                                |
 | Difference of two independent population means ($$\mu_1-\mu_2$$)              | Normal population **and** independent observations **and** $$\sigma_1$$ and $$\sigma_2$$ are known                          | Two-sample z-test                              | $$z=\frac{(\bar{x_1}-\bar{x_2})-(\mu_1-\mu_2)}{\sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}}}$$                                                                                                                     |
 | Difference of two independent population means ($$\mu_1-\mu_2$$)              | (Normal populations or $$n_1+n_2 >40$$) **and** independent observations **and** $$\sigma_1=\sigma_2$$ unknown              | Two-sample pooled t-test (equal variances)     | $$t=\frac{(\bar{x_1}-\bar{x_2})-(\mu_1-\mu_2)}{s_p\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}$$ $$s_p^2=\frac{(n_1-1)s_1^2+(n_2-1)s_2^2}{n_1+n_2-2}$$ $$df=n_1+n_2-2$$                                                               |
 | Difference of two independent population means ($$\mu_1-\mu_2$$)              | (Normal populations or $$n_1+n_2 >40$$) **and** independent observations **and** $$\sigma_1\neq\sigma_2$$ both unknown      | Two-sample unpooled t-test (unequal variances) | $$t=\frac{(\bar{x_1}-\bar{x_2})-(\mu_1-\mu_2)}{\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}}$$ $$df=\frac{(\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2})^2}{\frac{(\frac{s_1^2}{n_1})^2}{n_1-1}+\frac{(\frac{s_2^2}{n_2})^2}{n_2-1}}$$ |
