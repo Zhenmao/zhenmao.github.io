@@ -40,17 +40,17 @@ What are we trying to prove?
 | The null hypothesis ($$H_0$$)                                                       | The alternative hypothesis ($$H_1$$)                                                    |
 |-----------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
 | The hypothesis that we try to provide evidence against.                           | The hypothesis that we try to prove to be true.                                       |
-| \$$ H_0 $$ usually states that the population parameter is equal to the claimed value. | \$$ H_1 $$ usually states that the population parameter is not equal to the claimed value. |
-| \$$ H_0 $$ usually states there is no observed effect.                                 | \$$ H_1 $$ usually states there is an observed effect.                                     | 
+| The null hypothesis $$ H_0 $$ usually states that the population parameter is equal to the claimed value. | The alternative hypothesis $$ H_1 $$ usually states that the population parameter is not equal to the claimed value. |
+| The null hypothesis $$ H_0 $$ usually states there is no observed effect.                                 | The alternative hypothesis $$ H_1 $$ usually states there is an observed effect.                                     | 
 
 Tip: The sign of alternative hypothesis: $$\neq$$: two-tailed, $$<, \le, >, \ge$$: one-tailed.
 
 ### Step 3: Select significance level $$\alpha$$
 How tolerant are we about falsely rejecting the null hypothesis?
 
-\$$ \alpha $$: Type I error rate. A type I error is when you reject the null hypothesis when it is true.
+Type I error rate $$ \alpha $$: A type I error is when you reject the null hypothesis when it is true. $$ \alpha $$ is also called significance level of a test.
 
-\$$ \beta $$: Type II error rate. A type II error is when you fail to reject the null hypothesis when it is false.
+Type II error rate $$ \beta $$: A type II error is when you fail to reject the null hypothesis when it is false. $$ 1-\beta $$ is called the power of a test.
 
 |          |   No Fire  |    Fire    |
 |----------|:----------:|:----------:|
@@ -77,7 +77,7 @@ $$\text{Test statistic}=\frac{\text{Statistic}-\text{Parameter}}{\text{Standard 
 | Difference of two independent population means ($$\mu_1-\mu_2$$)              | (Normal populations or $$n_1+n_2 >40$$) **and** independent observations **and** $$\sigma_1=\sigma_2$$ unknown              | Two-sample pooled t-test (equal variances)     | $$t=\frac{(\bar{x_1}-\bar{x_2})-(\mu_1-\mu_2)}{s_p\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}$$ $$s_p^2=\frac{(n_1-1)s_1^2+(n_2-1)s_2^2}{n_1+n_2-2}$$ $$df=n_1+n_2-2$$                                                               |
 | Difference of two independent population means ($$\mu_1-\mu_2$$)              | (Normal populations or $$n_1+n_2 >40$$) **and** independent observations **and** $$\sigma_1\neq\sigma_2$$ both unknown      | Two-sample unpooled t-test (unequal variances) | $$t=\frac{(\bar{x_1}-\bar{x_2})-(\mu_1-\mu_2)}{\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}}$$ $$df=\frac{(\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2})^2}{\frac{(\frac{s_1^2}{n_1})^2}{n_1-1}+\frac{(\frac{s_2^2}{n_2})^2}{n_2-1}}$$ |
 | Difference of two dependent (paired) population means ($$\mu_d=\mu_1-\mu_2$$) | (Normal population of differences or $$n>30$$) **and** $$\sigma$$ unknown or small sample size $$n<30$$                       | Paired t-test                                  | $$t=\frac{(\bar{x_1}-\bar{x_2})-\mu_d}{\frac{s_d}{\sqrt{n}}}$$ $$df=n-1$$                                                                                                                                                          |
-| Difference of two population proportions ($$p_1-p_2$$)                        | $$n_1p_1>5$$ **and** $$n_1(1 − p_1) > 5$$ **and** $$n_2 p_2 > 5$$ **and** $$n_2(1 − p_2) > 5$$ and independent observations     | Two-proportion pooled z-test ($H_0:p_1=p_2$)   | $$z=\frac{\hat{p_1}-\hat{p_2}}{\sqrt{\hat{p}(1-\hat{p})(\frac{1}{n_1}+\frac{1}{n_2})}}$$ $$\hat{p}=\frac{x_1+x_2}{n_1+n_2}$$                                                                                                |
+| Difference of two population proportions ($$p_1-p_2$$)                        | $$n_1p_1>5$$ **and** $$n_1(1 − p_1) > 5$$ **and** $$n_2 p_2 > 5$$ **and** $$n_2(1 − p_2) > 5$$ and independent observations     | Two-proportion pooled z-test ($$H_0:p_1=p_2$$)   | $$z=\frac{\hat{p_1}-\hat{p_2}}{\sqrt{\hat{p}(1-\hat{p})(\frac{1}{n_1}+\frac{1}{n_2})}}$$ $$\hat{p}=\frac{x_1+x_2}{n_1+n_2}$$                                                                                                |
 | Difference of two population proportions ($$p_1-p_2$$)                        | $$n_1p_1>5$$ **and** $$n_1(1 − p_1) > 5$$ **and** $$n_2 p_2 > 5$$ **and** $$n_2(1 − p_2) > 5$$ **and** independent observations | Two-proportion unpooled z-test                 | $$z=\frac{(\hat{p_1}-\hat{p_2})-(p_1-p_2)}{\sqrt{\frac{\hat{p_1}(1-\hat{p_1})}{n_1}+\frac{\hat{p_2}(1-\hat{p_2})}{n_2}}}$$                                                                                                 |                                                                                                
 
 Tip: How do I determine whether my data are normal?
