@@ -108,7 +108,7 @@ body {
 }
 
 #portfolio .portfolio-box:hover .portfolio-box-caption {
-	opacity: 0.9;
+	opacity: 0.95;
 }
 
 #portfolio .portfolio-box:focus {
