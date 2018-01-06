@@ -69,9 +69,9 @@ body {
 	font-size: 16px;
 	margin: 35px 0;
 	padding: 11px 16px;
-	-webkit-transition: all .3s linear;
-	-moz-transition: all .3s linear;
-	transition: all .3s linear;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	transition: all .3s ease;
 	display: inline-block;
 	border-width: 3px;
 	border-style: solid;
@@ -81,6 +81,19 @@ body {
 #portfolio .portfolio-box {
 	position: relative;
 	display: block;
+	overflow: hidden;
+}
+
+#portfolio .portfolio-box:hover img {
+	-webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	transform: scale(1.2);
+}
+
+#portfolio .portfolio-box img {
+	-webkit-transition: .2s ease;
+	-moz-transition: .2s ease;
+	transition: .2s ease;
 }
 
 #portfolio .portfolio-box .portfolio-box-caption {
@@ -91,9 +104,9 @@ body {
 	height: 100%;
 	text-align: center;
 	opacity: 0;
-	-webkit-transition: .2s linear;
-	-moz-transition: .2s linear;
-	transition: .2s linear;
+	-webkit-transition: .2s ease;
+	-moz-transition: .2s ease;
+	transition: .2s ease;
 }
 
 #portfolio .portfolio-box .portfolio-box-caption .portfolio-box-caption-content {
@@ -102,6 +115,7 @@ body {
 	width: 100%;
 	transform: translateY(-50%);
 	text-align: center;
+	font-weight: bold;
 }
 
 #portfolio .portfolio-box:hover .portfolio-box-caption {
@@ -146,5 +160,5 @@ footer:before {
 }
 
 #portfolio .portfolio-box .portfolio-box-caption {
-	background: rgba(255, 255, 255, 0.95);
+	background: rgba(255, 255, 255, 0.8);
 }
