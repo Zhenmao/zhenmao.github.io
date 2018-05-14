@@ -10,14 +10,14 @@ body {
 	font-family: 'Open Sans', sans-serif, Arial, Helvetica;
 	font-size:62px;
 	line-height:60px;
-	font-weight:800;
+	font-weight:bold;
 	color:#111;
 }
 
 #banner h2 {
 	font-family: 'Open Sans', sans-serif, Arial, Helvetica;
 	font-size:18px;
-	font-weight:300;
+	font-weight:normal;
 	color:#111;
 }
 
@@ -40,7 +40,7 @@ body {
 	color:#111;
 }
 
-/*--------Banner Secton--------*/
+/*--------Banner Section--------*/
 #banner .section-heading:before,
 #banner .section-heading:after {
 	content: "";
@@ -77,23 +77,31 @@ body {
 	border-style: solid;
 }
 
-/*--------Portforlio Section--------*/
+/*--------Portfolio Section--------*/
+#portfolio .portfolio-container {
+	padding: 12px;
+}
+
 #portfolio .portfolio-box {
 	position: relative;
 	display: block;
 	overflow: hidden;
+	box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.2);
 }
 
-#portfolio .portfolio-box:hover img {
-	-webkit-transform: scale(1.2);
-	-moz-transform: scale(1.2);
-	transform: scale(1.2);
-}
+/* #portfolio .portfolio-box:hover img {
+	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	transform: scale(1.1);
+} */
 
 #portfolio .portfolio-box img {
-	-webkit-transition: .2s ease;
-	-moz-transition: .2s ease;
-	transition: .2s ease;
+	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	transform: scale(1.1);
+	-webkit-transition: .5s ease;
+	-moz-transition: .5s ease;
+	transition: .5s ease;
 }
 
 #portfolio .portfolio-box .portfolio-box-caption {
@@ -116,10 +124,17 @@ body {
 	transform: translateY(-50%);
 	text-align: center;
 	font-weight: bold;
+	color: #111;
+	text-shadow:
+     -1px -1px 0 #fff,  
+      1px -1px 0 #fff,
+      -1px 1px 0 #fff,
+			 1px 1px 0 #fff;
+	pointer-events: none;
 }
 
 #portfolio .portfolio-box:hover .portfolio-box-caption {
-	opacity: 0.95;
+	opacity: 1;
 }
 
 #portfolio .portfolio-box:focus {
@@ -160,5 +175,5 @@ footer:before {
 }
 
 #portfolio .portfolio-box .portfolio-box-caption {
-	background: rgba(255, 255, 255, 0.8);
+	background: rgba(255, 255, 255, 0.1);
 }
