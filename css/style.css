@@ -43,6 +43,10 @@ body {
 }
 
 /*--------Banner Section--------*/
+#banner {
+	padding: 12px;
+}
+
 #banner .section-heading:before,
 #banner .section-heading:after {
 	content: "";
