@@ -126,6 +126,32 @@ body {
   font-weight: 400;
 }
 
+#banner h1 > div {
+  border-right: 3px solid currentColor;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: type 2s steps(11) 1s forwards, blink 0.5s steps(1) infinite;
+}
+
+@keyframes type {
+  to {
+    width: 11.1ch;
+  }
+}
+
+@keyframes blink {
+  from {
+    border-color: transparent;
+  }
+  50% {
+    border-color: currentColor;
+  }
+  to {
+    border-color: transparent;
+  }
+}
+
 #banner .button {
   color: #111;
 }
