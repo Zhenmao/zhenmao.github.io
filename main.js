@@ -3,10 +3,9 @@ const dialog = document.querySelector("#demo");
 const closeBtn = document.querySelector("#demoCloseButton");
 const iframe = document.querySelector("#demoIframe");
 
-const ro = new ResizeObserver((entries) => {
-  entries.forEach((entry) => {
-    iframe.style.height = `${entry.target.scrollHeight}px`;
-  });
+const ro = new ResizeObserver(() => {
+  const embedded = iframe.contentWindow.document.body;
+  iframe.style.height = `${embedded.scrollHeight}px`;
 });
 
 closeBtn.addEventListener("click", () => {
