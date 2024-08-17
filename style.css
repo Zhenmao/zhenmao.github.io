@@ -275,3 +275,60 @@ a:hover {
 footer:before {
   background: #d2b356;
 }
+
+/*--------Modal--------*/
+:modal {
+  width: calc(100vw - 3rem);
+  height: calc(100svh - 3rem);
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  overscroll-behavior: contain;
+}
+
+::backdrop {
+  background: #000a;
+  backdrop-filter: blur(16px) saturate(120%);
+}
+
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+
+iframe {
+  border: 0;
+  width: 100%;
+}
+
+.close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+  overflow: hidden;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  text-indent: 10rem;
+  cursor: pointer;
+  color: #111;
+  transition: all 0.3s ease;
+  background-color: #fff;
+  padding: 0;
+  display: grid;
+  place-items: center;
+}
+
+.close-button::after {
+  font-size: 2rem;
+  position: absolute;
+  line-height: 0;
+  text-indent: 0;
+  content: "\00D7";
+  color: currentColor;
+}
+
+.close-button:hover {
+  color: #d2b356;
+}
