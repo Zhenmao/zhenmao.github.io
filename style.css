@@ -121,6 +121,7 @@ h1 {
 .portfolio__item {
   position: relative;
   overflow: hidden;
+  background-color: var(--color-text);
 }
 
 .portfolio__item__title {
