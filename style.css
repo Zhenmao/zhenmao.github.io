@@ -1,8 +1,9 @@
 :root {
   --color-background: hsl(0, 0%, 2%);
-  --color-background-opaque: hsla(0, 0%, 2%, 60%);
+  --color-background-opaque: hsla(0, 0%, 2%, 80%);
   --color-text: hsl(0, 0%, 100%);
   --color-accent: hsl(0, 100%, 50%);
+  --color-accent-opaque: hsla(0, 100%, 50%, 80%);
 
   --font-heading: "Space Mono", monospace;
   --font-body: "Space Mono", monospace;
@@ -46,12 +47,18 @@ svg {
 }
 
 body {
-  background-color: var(--color-background);
   color: var(--color-text);
   font-family: var(--font-body);
   font-size: var(--font-size-1);
   line-height: var(--line-height-1);
   font-weight: var(--font-weight-normal);
+  background-color: var(--color-background);
+  background-image: radial-gradient(
+    var(--color-accent-opaque) 1px,
+    var(--color-background) 1px
+  );
+  background-size: 24px 24px;
+  background-attachment: fixed;
 }
 
 .container {
@@ -108,6 +115,7 @@ h1 {
   line-height: var(--line-height-7);
   font-weight: var(--font-weight-bold);
   margin-bottom: 0.25em;
+  letter-spacing: -0.02em;
 }
 
 /* Portfolio */
