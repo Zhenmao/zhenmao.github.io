@@ -76,6 +76,7 @@ header {
   width: 100%;
   padding-block: 0.5rem;
   background-color: var(--color-background);
+  z-index: 1;
 }
 
 header .container {
