@@ -200,3 +200,33 @@ footer .container {
   gap: 1rem;
   text-align: center;
 }
+
+/* Scrollbar */
+html {
+  --scrollbar-color-thumb: var(--color-accent);
+  --scrollbar-color-track: var(--color-background);
+  --scrollbar-width: auto;
+  --scrollbar-width-legacy: 16px;
+}
+
+/* Modern browsers with `scrollbar-*` support */
+@supports (scrollbar-width: auto) {
+  html {
+    scrollbar-color: var(--scrollbar-color-thumb) var(--scrollbar-color-track);
+    scrollbar-width: var(--scrollbar-width);
+  }
+}
+
+/* Legacy browsers with `::-webkit-scrollbar-*` support */
+@supports selector(::-webkit-scrollbar) {
+  html::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-color-thumb);
+  }
+  html::-webkit-scrollbar-track {
+    background: var(--scrollbar-color-track);
+  }
+  html::-webkit-scrollbar {
+    max-width: var(--scrollbar-width-legacy);
+    max-height: var(--scrollbar-width-legacy);
+  }
+}
