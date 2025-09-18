@@ -108,7 +108,8 @@ header .container {
 
 /* Intro */
 .intro {
-  padding-block: max(24vh, 9rem);
+  display: flex;
+  align-items: center;
 }
 
 h1 {
@@ -116,7 +117,39 @@ h1 {
   line-height: var(--line-height-7);
   font-weight: var(--font-weight-bold);
   margin-bottom: 0.25em;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
+}
+
+.full-page {
+  min-height: 100svh;
+}
+
+.sticky {
+  position: relative;
+  overflow: hidden;
+}
+
+.sticky h2 {
+  text-align: center;
+  font-weight: var(--font-weight-bold);
+  line-height: 0.8;
+  letter-spacing: -0.025em;
+  position: relative;
+  transform-origin: 50% 0%;
+  transform: scaleY(0);
+  will-change: transform;
+}
+
+.sticky[data-sticky="1"] h2 {
+  font-size: 36vw;
+}
+
+.sticky[data-sticky="2"] h2 {
+  font-size: 24.5vw;
+}
+
+.sticky[data-sticky="3"] h2 {
+  font-size: 20.8vw;
 }
 
 /* Portfolio */
