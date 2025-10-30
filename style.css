@@ -198,6 +198,7 @@ h1 {
     transition: transform 0.2s ease;
   }
 
+  .portfolio__item a:focus img,
   .portfolio__item:hover img {
     transform: scale(1.1);
   }
@@ -207,6 +208,7 @@ h1 {
     transition: transform 0.2s ease;
   }
 
+  .portfolio__item a:focus .portfolio__item__title,
   .portfolio__item:hover .portfolio__item__title {
     transform: translateY(0);
   }
@@ -216,6 +218,7 @@ h1 {
     transition: transform 0.2s ease 0.2s;
   }
 
+  .portfolio__item a:focus .portfolio__item__title::after,
   .portfolio__item:hover .portfolio__item__title::after {
     transform: translate(0, 0);
   }
