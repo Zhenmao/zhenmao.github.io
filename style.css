@@ -214,6 +214,14 @@ h1 {
   }
 }
 
+.portfolio__item.loading .portfolio__item__title {
+  transform: translateY(0);
+}
+
+.portfolio__item.loading .portfolio__item__title::after {
+  transform: translate(0, 0);
+}
+
 /* Footer */
 footer {
   padding-block: max(8vh, 3rem);
