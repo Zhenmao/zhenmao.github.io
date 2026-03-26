@@ -1,8 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(Flip, ScrollTrigger, ScrollSmoother);
-  introAnimation();
-  elasticGridScroll();
 
+  const mm = gsap.matchMedia();
+
+  mm.add("(prefers-reduced-motion: no-preference)", (context) => {
+    introAnimation();
+    elasticGridScroll();
+  });
   function introAnimation() {
     const hero = document.querySelector(".hero");
     const heroTexts = document.querySelectorAll(".hero__text");
