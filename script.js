@@ -19,9 +19,22 @@ function imageLoaded() {
 
 const mm = gsap.matchMedia();
 mm.add("(prefers-reduced-motion: no-preference)", (context) => {
+  initAnimatedBackground();
   introAnimation();
   elasticGridScroll();
 });
+
+function initAnimatedBackground() {
+  const background = document.querySelector(".background");
+  document.body.addEventListener(
+    "mousemove",
+    (e) => {
+      background.style = `--x: ${e.clientX}px; --y: ${e.clientY}px; `;
+    },
+    { passive: true },
+  );
+}
+
 function introAnimation() {
   const hero = document.querySelector(".hero");
   const heroTexts = document.querySelectorAll(".hero__text");
