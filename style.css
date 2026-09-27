@@ -216,7 +216,6 @@ h1 {
 
 .portfolio__item__title::after {
   content: "\2197";
-  font-size: 1.5em;
   font-weight: var(--font-weight-bold);
   position: relative;
   display: inline-block;
