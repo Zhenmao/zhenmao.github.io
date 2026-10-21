@@ -87,7 +87,7 @@ body {
       radial-gradient(circle farthest-corner at var(--x) var(--y), #777, #000);
     background-blend-mode: screen;
     filter: contrast(16);
-    transition: 0.25s cubic-bezier(0.1, 0, 0.5, 1.5);
+    transition: 0.2s cubic-bezier(0.1, 0, 0.5, 1.5);
     transition-property: --x, --y;
     background-attachment: fixed;
   }
@@ -128,24 +128,90 @@ header .container {
 .logo {
   font-size: var(--font-size-2);
   line-height: var(--line-height-2);
-  letter-spacing: 0.1em;
 }
 
 .cta {
-  --cta-color: var(--color-text);
-  color: var(--cta-color);
   text-decoration: none;
-  display: inline-block;
-  padding: 0.25em 0.5em;
-  border: 2px solid currentColor;
-  transition:
-    color 0.2s ease,
-    border-color 0.2s ease;
+  color: var(--color-text);
+  background-color: var(--color-accent);
+  display: flex;
+  gap: 0.375em;
+  align-items: center;
+  padding: 0.25em 0.75em;
+  letter-spacing: 0.025em;
+  position: relative;
 }
 
-.cta:hover,
-.cta:focus {
-  --cta-color: var(--color-accent);
+.text-duo,
+.arrow-duo {
+  position: relative;
+  display: inline-flex;
+  overflow: hidden;
+}
+
+.arrow-duo {
+  width: 1em;
+  height: 1em;
+}
+
+.text-duo__default {
+  transform: translateY(100%);
+}
+
+.text-duo__clone {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(0%);
+}
+
+.arrow-duo::before,
+.arrow-duo::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'%3E%3C!-- Icon from Material Symbols by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --%3E%3Cpath fill='%23FFF' d='M6.4 18L5 16.6L14.6 7H6V5h12v12h-2V8.4z'/%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: center;
+}
+
+.arrow-duo::before {
+  transform: translate(-100%, 100%);
+}
+
+.arrow-duo::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(0%, 0%);
+}
+
+.text-duo__default,
+.text-duo__clone,
+.arrow-duo::before,
+.arrow-duo::after {
+  transition: transform 0.2s ease-out;
+}
+
+.cta:hover .text-duo__default,
+.cta:focus .text-duo__default {
+  transform: translateY(0%);
+}
+
+.cta:hover .text-duo__clone,
+.cta:focus .text-duo__clone {
+  transform: translateY(-100%);
+}
+
+.cta:hover .arrow-duo::before,
+.cta:focus .arrow-duo::before {
+  transform: translate(0%, 0%);
+}
+
+.cta:hover .arrow-duo::after,
+.cta:focus .arrow-duo::after {
+  transform: translate(100%, -100%);
 }
 
 h1 {
