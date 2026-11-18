@@ -20,8 +20,14 @@ function imageLoaded() {
 const mm = gsap.matchMedia();
 mm.add("(prefers-reduced-motion: no-preference)", (context) => {
   initAnimatedBackground();
-  introAnimation();
-  elasticGridScroll();
+  heroAnimation();
+
+  const smoother = ScrollSmoother.create({
+    smooth: 1,
+    normalizeScroll: true,
+  });
+  introHeadingScroll(smoother);
+  elasticGridScroll(smoother);
 });
 
 function initAnimatedBackground() {
@@ -35,7 +41,7 @@ function initAnimatedBackground() {
   );
 }
 
-function introAnimation() {
+function heroAnimation() {
   const hero = document.querySelector(".hero");
   const heroTexts = document.querySelectorAll(".hero__text");
 
@@ -75,12 +81,69 @@ function introAnimation() {
   });
 }
 
-function elasticGridScroll() {
-  const smoother = ScrollSmoother.create({
-    smooth: 1,
-    normalizeScroll: true,
-  });
+function introHeadingScroll(smoother) {
+  const lagConfig = {
+    baseLag: 0, // Lag applied to the original heading
+    lagScale: 0.2, // How much additional lag is applied per ghost heading
+  };
 
+  const ghostColors = [
+    "#ffffff",
+    "#ff0000",
+    "#c6150e",
+    "#8f1911",
+    "#5d1610",
+    "#2e0f0b",
+  ];
+
+  init();
+
+  function init() {
+    const ghosts = buildGhosts();
+    applyLagEffects(ghosts, smoother);
+  }
+
+  function buildGhosts() {
+    const { baseLag, lagScale } = lagConfig;
+
+    const original = document.querySelector(".heading");
+    original.style.color = "transparent";
+    const textContent = original.textContent;
+
+    const ghostsContainer = document.createElement("span");
+    ghostsContainer.classList.add("ghosts");
+
+    const ghosts = [];
+
+    ghostColors.forEach((color, index) => {
+      const lag = baseLag + index * lagScale;
+
+      const ghostEl = document.createElement("span");
+      ghostEl.classList.add("ghost");
+      ghostEl.setAttribute("data-content", textContent);
+      ghostEl.style.zIndex = ghostColors.length - index;
+      ghostEl.style.color = color;
+      ghostsContainer.appendChild(ghostEl);
+
+      ghosts.push({
+        element: ghostEl,
+        lag,
+      });
+    });
+
+    original.appendChild(ghostsContainer);
+
+    return ghosts;
+  }
+
+  function applyLagEffects(ghosts, smoother) {
+    ghosts.forEach(({ element, lag }) => {
+      smoother.effects(element, { speed: 1, lag });
+    });
+  }
+}
+
+function elasticGridScroll(smoother) {
   const lagConfig = {
     baseLag: 0.3, // Lag applied to the center column
     lagScale: 0.15, // How much additional lag is applied per column away from center
